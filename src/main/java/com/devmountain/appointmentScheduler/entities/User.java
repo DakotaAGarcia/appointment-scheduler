@@ -1,5 +1,6 @@
 package com.devmountain.appointmentScheduler.entities;
 
+import com.devmountain.appointmentScheduler.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,5 +30,15 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JsonBackReference
     private Set<Appointment> appointmentSet = new HashSet<>();
+
+    public User(UserDto userDto){
+        if(userDto.getUsername() != null)
+            this.username = userDto.getUsername();
+        if(userDto.getPassword() != null)
+            this.password = userDto.getPassword();
+        if(userDto.getEmail() != null){
+            this.email = userDto.getEmail();
+        }
+    }
 
 }
