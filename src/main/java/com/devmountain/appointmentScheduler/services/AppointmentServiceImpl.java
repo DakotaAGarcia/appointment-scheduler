@@ -43,12 +43,26 @@ public class AppointmentServiceImpl implements AppointmentService {
         appointmentOptional.ifPresent(appointment -> appointmentRepository.delete(appointment));
     }
     @Transactional
-    public void updateAppointmentById(AppointmentDto appointmentDto) {
+    public void updateAppointmentById(AppointmentDto appointmentDto, Long appointmentId) {
         Optional<Appointment> appointmentOptional = appointmentRepository.findById(appointmentDto.getId());
-        appointmentOptional.ifPresent(appointment -> { appointment.setDescription(appointmentDto.getDescription());
-        appointmentRepository.saveAndFlush(appointment);
-    });
-}
+
+        if (appointmentOptional.isPresent()) {
+            Appointment appointment = appointmentOptional.get();
+            System.out.println("Before update: " + appointment);
+
+            appointment.setDescription(appointmentDto.getDescription());
+            appointment.setDate(appointmentDto.getDate());
+            appointment.setTime(appointmentDto.getTime());
+
+            appointmentRepository.saveAndFlush(appointment);
+
+            System.out.println("After update: " + appointment);
+        } else {
+            System.out.println("Appointment not found with ID: " + appointmentId);
+        }
+    }
+
+
     @Override
     public List<AppointmentDto> getAllAppointmentsByUserId(Long userId){
         Optional<User> userOptional = userRepository.findById(userId);

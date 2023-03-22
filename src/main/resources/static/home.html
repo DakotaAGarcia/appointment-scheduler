@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="appointment-edit-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="appointment-edit-modal-title" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -49,8 +49,25 @@
                 <h5 class="modal-title" id="appointment-edit-modal-title">Edit Appointment</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body d-flex">
-                <textarea class="form-control" rows="5" id="appointment-description"></textarea>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-appointment-date">Date:</label>
+                    <input type="date" class="form-control" id="edit-appointment-date">
+                </div>
+                <div class="form-group">
+                    <label for="edit-appointment-time">Time:</label>
+                    <input type="time" class="form-control" id="edit-appointment-time">
+                </div>
+                <div class="form-group">
+                    <label for="edit-appointment-trainer">Trainer:</label>
+                    <select class="form-control" id="edit-appointment-trainer" disabled>
+                        <option value="" selected>Select trainer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-appointment-description">Description:</label>
+                    <textarea class="form-control" rows="5" id="edit-appointment-description"></textarea>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -59,6 +76,7 @@
         </div>
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
