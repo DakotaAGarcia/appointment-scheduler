@@ -23,7 +23,7 @@ public class Trainer {
     @Column(name="username", nullable = false, unique = true)
     private String username;
 
-    @Column(name="password", nullable = false, unique = true)
+    @Column(name="password", nullable = false)
     private String password;
 
     @Column(name="email", nullable = false, unique = true)
@@ -42,5 +42,9 @@ public class Trainer {
             this.username = trainerDto.getUsername();
         if(trainerDto.getPassword() != null)
             this.password = trainerDto.getPassword();
+        if(trainerDto.getEmail() != null)
+            this.email = trainerDto.getEmail();
+        if(trainerDto.getBio() != null)
+            this.bio = trainerDto.getBio();
     }
 }

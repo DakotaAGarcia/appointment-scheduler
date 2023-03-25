@@ -2,8 +2,10 @@ package com.devmountain.appointmentScheduler.controllers;
 
 import com.devmountain.appointmentScheduler.dtos.AppointmentDto;
 import com.devmountain.appointmentScheduler.dtos.TrainerDto;
+import com.devmountain.appointmentScheduler.entities.Appointment;
 import com.devmountain.appointmentScheduler.services.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,6 +39,11 @@ public class AppointmentsController {
     @GetMapping("/{appointmentId}")
     public Optional<AppointmentDto> getAppointmentById(@PathVariable Long appointmentId){
         return appointmentService.getAppointmentById(appointmentId);
+    }
+    @GetMapping("/trainer/{trainerId}")
+    public ResponseEntity<List<AppointmentDto>> getAppointmentsByTrainer(@PathVariable Long trainerId) {
+        List<AppointmentDto> appointments = appointmentService.getAppointmentsByTrainer(trainerId);
+        return ResponseEntity.ok(appointments);
     }
 
 }

@@ -82,5 +82,10 @@ public class AppointmentServiceImpl implements AppointmentService {
         }
         return Optional.empty();
     }
+    @Override
+    public List<AppointmentDto> getAppointmentsByTrainer(Long trainerId) {
+        List<Appointment> appointments = appointmentRepository.findByTrainerId(trainerId);
+        return appointments.stream().map(AppointmentDto::new).collect(Collectors.toList());
+    }
 
 }

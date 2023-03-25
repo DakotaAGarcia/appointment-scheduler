@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", () => {
 //Cookie
 const cookieArr = document.cookie.split("=")
 const userId = cookieArr[1];
@@ -189,3 +189,4 @@ updateAppointmentBtn.addEventListener("click", (e)=>{
     handleAppointmentEdit(appointmentId);
 })
 getTrainers();
+});

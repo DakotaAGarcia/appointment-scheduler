@@ -13,4 +13,6 @@ public interface TrainerService {
     List<String> trainerLogin(TrainerDto trainerDto);
 
     List<Trainer> getAllTrainers();
+
+    TrainerDto getTrainerById(Long trainerId);
 }

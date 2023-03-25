@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'Content-Type': 'application/json'
     };
 
-    const baseUrl = 'http://localhost:8080/users';
+    const baseUrl = 'http://localhost:8080/trainers';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,11 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error(err.message));
 
         const responseArr = await response.json();
+        console.log('Response Array:', responseArr);
 
-        if (response.status === 200) {
-            document.cookie = `userId=${responseArr[1]}`;
-            window.location.replace(responseArr[0]);
-        }
+
+if (response.status === 200) {
+    document.cookie = `trainerId=${responseArr[1]}`;
+      console.log('Cookie Set:', document.cookie);
+      console.log('All Cookies:', document.cookie.split(";"));
+    window.location.replace(responseArr[0]);
+}
     };
 
     loginForm.addEventListener("submit", handleSubmit);

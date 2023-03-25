@@ -25,7 +25,7 @@ public class TrainerServiceImpl implements TrainerService{
         List<String> response = new ArrayList<>();
         Trainer trainer = new Trainer(trainerDto);
         trainerRepository.saveAndFlush(trainer);
-        response.add("http://localhost:8080/login.html");
+        response.add("http://localhost:8080/trainer-login.html");
         return response;
     }
     @Override
@@ -34,7 +34,8 @@ public class TrainerServiceImpl implements TrainerService{
         Optional<Trainer> trainerOptional = trainerRepository.findByUsername(trainerDto.getUsername());
         if(trainerOptional.isPresent()){
             if(passwordEncoder.matches(trainerDto.getPassword(), trainerOptional.get().getPassword())){
-                response.add("http://localhost:8080/home.html");
+                response.add("http://localhost:8080/trainer-home.html");
+                response.add(trainerOptional.get().getId().toString());
             } else {
                 response.add("Username or password incorrect");
             }
@@ -46,5 +47,10 @@ public class TrainerServiceImpl implements TrainerService{
     @Override
     public List<Trainer> getAllTrainers(){
         return trainerRepository.findAll();
+    }
+    @Override
+    public TrainerDto getTrainerById(Long trainerId) {
+        Optional<Trainer> trainerOptional = trainerRepository.findById(trainerId);
+        return trainerOptional.map(TrainerDto::new).orElse(null);
     }
 }

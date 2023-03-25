@@ -10,4 +10,7 @@ import java.util.List;
 public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
 
     List<Appointment> findAllByUserEquals(User user);
+
+    List<Appointment> findByTrainerId(Long trainerId);
+
 }

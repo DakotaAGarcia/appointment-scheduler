@@ -28,6 +28,12 @@ public class UserServiceImpl  implements UserService{
         response.add("http://localhost:8080/login.html");
         return response;
     }
+
+    @Override
+    public UserDto getUserById(Long userId) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        return userOptional.map(UserDto::new).orElse(null);
+    }
     @Override
     public List<String> userLogin(UserDto userDto){
         List<String> response = new ArrayList<>();

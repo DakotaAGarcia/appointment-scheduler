@@ -19,6 +19,7 @@ public class AppointmentDto implements Serializable {
     private LocalDate date;
     private LocalTime time;
     private Long userId;
+    private String username;
     private Long trainerId;
     private String description;
 
@@ -37,7 +38,9 @@ public class AppointmentDto implements Serializable {
         }
         if(appointment.getUser() != null){
             this.userId = appointment.getUser().getId();
+            this.username = appointment.getUser().getUsername();
         }
+
         if(appointment.getDescription() != null){
             this.description = appointment.getDescription();
         }

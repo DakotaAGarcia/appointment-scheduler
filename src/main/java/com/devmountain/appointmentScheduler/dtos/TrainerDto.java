@@ -17,7 +17,9 @@ public class TrainerDto implements Serializable {
 
     private Long id;
     private String username;
+    private String bio;
     private String password;
+    private String email;
     private Set<AppointmentDto> appointmentDtoSet = new HashSet<>();
 
     public TrainerDto(Trainer trainer){
@@ -29,6 +31,12 @@ public class TrainerDto implements Serializable {
         }
         if(trainer.getPassword() != null){
             this.password = trainer.getPassword();
+        }
+        if(trainer.getEmail() !=null){
+            this.email = trainer.getEmail();
+        }
+        if(trainer.getBio() !=null){
+            this.bio = trainer.getBio();
         }
     }
 }
