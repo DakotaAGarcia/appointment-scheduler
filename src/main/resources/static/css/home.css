@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+#home-container {
+    margin-top: 50px;
+}
+
+#appointment-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.btn-danger {
+    margin: 10px;
+}

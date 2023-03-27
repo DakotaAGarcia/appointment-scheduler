@@ -133,10 +133,10 @@ async function handleAppointmentEdit(appointmentId) {
 
 
 const createAppointmentCards = (array) => {
-    appointmentContainer.innerHTML = ''
+    appointmentContainer.innerHTML = '';
     array.forEach(obj => {
-        let appointmentCard = document.createElement("div")
-        appointmentCard.classList.add("m-2")
+        let appointmentCard = document.createElement("div");
+        appointmentCard.classList.add("m-2");
 
         const trainer = trainersById[obj.trainerId];
 
@@ -148,19 +148,23 @@ const createAppointmentCards = (array) => {
                     <p>Time: ${obj.time}</p>
                     <p>Trainer: ${trainer.username} (${trainer.email})</p>
                     <div class="d-flex justify-content-between">
-                        <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
-                        <button onclick="getAppointmentById(${obj.id})" type="button" class="btn btn-primary"
+                        <button class="btn btn-danger delete-btn">Delete</button>
+                        <button type="button" class="btn btn-primary edit-btn"
                         data-bs-toggle="modal" data-bs-target="#appointment-edit-modal">
                         Edit
                         </button>
                     </div>
                 </div>
             </div>
-        `
+        `;
+
+        appointmentCard.querySelector(".delete-btn").addEventListener("click", () => handleDelete(obj.id));
+        appointmentCard.querySelector(".edit-btn").addEventListener("click", () => getAppointmentById(obj.id));
 
         appointmentContainer.append(appointmentCard);
-    })
-}
+    });
+};
+
 
 function handleLogout(){
     let c = document.cookie.split(";");

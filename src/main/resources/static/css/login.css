@@ -1,0 +1,54 @@
+body {
+    background-image: url('../images/login-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* Body Class */
+.container {
+}
+
+/* Container Class */
+.container-md {
+}
+
+/* Heading 1 */
+h1 {
+}
+
+/* Form ID */
+#login-form {
+}
+
+/* Form Group */
+.form-group {
+}
+
+/* Label */
+label {
+}
+
+/* Input */
+input {
+}
+
+/* Submit Button ID */
+#submit-button {
+}
+
+/* Register Button */
+.btn-secondary {
+}
+
+/* Trainer Register Button */
+.btn-secondary + .btn-secondary {
+}
+
+/* Trainer Login Button */
+.btn-secondary + .btn-secondary + .btn-secondary {
+}
+
+
