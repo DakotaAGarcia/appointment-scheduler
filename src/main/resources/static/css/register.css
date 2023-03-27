@@ -1,0 +1,62 @@
+body {
+    background-image: url('../images/register-background.jpg');
+    background-size: cover;
+    background-position: right 25% top 30% ;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+#register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#register-container input::placeholder {
+    color: white;
+}
+
+#register-email, #register-username, #register-password {
+    background-color: rgba(19, 10, 10, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#trainer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 4vw;
+    position: absolute;
+    top: 24px;
+    left: 0px;
+    color: white;
+}
+#trainer-container .btn {
+    margin-bottom: 1rem;
+}
+.btn {
+    background-color: black;
+    color: white;
+    border: none;
+}

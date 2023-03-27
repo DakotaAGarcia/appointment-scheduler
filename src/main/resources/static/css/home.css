@@ -1,17 +1,38 @@
 body {
-    background-color: black;
-    font-family: Arial, sans-serif;
+    background-image: url('../images/user-home-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-container {
+    display: flex;
+   align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 50px 0;
 }
 
 #home-container {
-    margin-top: 50px;
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 #appointment-form-container {
-    max-width: 700px;
-    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#appointment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .btn-danger {
-    margin: 10px;
+    width: 85px;
+    align-self: flex-end;
 }
+

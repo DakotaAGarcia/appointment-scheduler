@@ -3,52 +3,52 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
-
-
-/* Body Class */
-.container {
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
 }
 
-/* Container Class */
-.container-md {
+#login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#login-username, #login-password {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #8e8027;
 }
 
-/* Heading 1 */
 h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Form ID */
-#login-form {
+#trainer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 4vw;
+    position: absolute;
+    top: 24px;
+    left: 0px;
 }
-
-/* Form Group */
-.form-group {
+#trainer-container .btn {
+    margin-bottom: 1rem;
 }
-
-/* Label */
-label {
+.btn {
+    background-color: black;
+    color: white;
+    border: none;
 }
-
-/* Input */
-input {
-}
-
-/* Submit Button ID */
-#submit-button {
-}
-
-/* Register Button */
-.btn-secondary {
-}
-
-/* Trainer Register Button */
-.btn-secondary + .btn-secondary {
-}
-
-/* Trainer Login Button */
-.btn-secondary + .btn-secondary + .btn-secondary {
-}
-
-
