@@ -1,0 +1,56 @@
+body {
+    background-image: url('../images/login-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-username, #login-password {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #8e8027;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#trainer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 4vw;
+    position: absolute;
+    top: 24px;
+    left: 0px;
+}
+#trainer-container .btn {
+    margin-bottom: 1rem;
+}
+.btn {
+    background-color: black;
+    color: white;
+    border: none;
+}
+

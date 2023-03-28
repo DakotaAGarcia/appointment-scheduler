@@ -141,22 +141,23 @@ const createAppointmentCards = (array) => {
         const trainer = trainersById[obj.trainerId];
 
         appointmentCard.innerHTML = `
-            <div class="card d-flex" style="width: 18rem; height: 18rem;">
-                <div class="card-body d-flex flex-column  justify-content-between" style="height: available">
-                    <p class="card-text">${obj.description}</p>
-                    <p>Date: ${obj.date}</p>
-                    <p>Time: ${obj.time}</p>
-                    <p>Trainer: ${trainer.username} (${trainer.email})</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-danger delete-btn">Delete</button>
-                        <button type="button" class="btn btn-primary edit-btn"
-                        data-bs-toggle="modal" data-bs-target="#appointment-edit-modal">
-                        Edit
-                        </button>
-                    </div>
-                </div>
+    <div class="card d-flex appointment-card opaque-background">
+        <div class="card-body d-flex flex-column justify-content-between appointment-card-body" style="height: available">
+            <p class="card-text">${obj.description}</p>
+            <p>Date: ${obj.date}</p>
+            <p>Time: ${obj.time}</p>
+            <p>Trainer: ${trainer.username} (${trainer.email})</p>
+            <div class="d-flex justify-content-between">
+                <button class="btn delete-btn" style="background-color: black; color: white;">Delete</button>
+                <button type="button" class="btn edit-btn" style="background-color: black; color: white;"
+                data-bs-toggle="modal" data-bs-target="#appointment-edit-modal">
+                Edit
+                </button>
             </div>
-        `;
+        </div>
+    </div>
+`;
+
 
         appointmentCard.querySelector(".delete-btn").addEventListener("click", () => handleDelete(obj.id));
         appointmentCard.querySelector(".edit-btn").addEventListener("click", () => getAppointmentById(obj.id));

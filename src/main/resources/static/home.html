@@ -13,11 +13,13 @@
 </head>
 <body>
 
-
+<div class="page-wrapper">
 <div class ="main-container">
 <div class="container" id="home-container">
+    <div class="content-container">
     <div id="appointment-form-container">
-        <form id="appointment-form">
+        <div class="form-wrapper">
+        <form id="appointment-form" class="left-align-form">
             <div class="form-group">
                 <label for="appointment-date">Date:</label>
                 <input type="date" class="form-control" id="appointment-date">
@@ -36,14 +38,19 @@
             </div>
             <button id="submit-button" type="submit" class="btn btn-primary mt-1">Submit</button>
         </form>
+        </div>
 
+        <div class="appointments-wrapper">
             <div id="appointment-container"></div>
         </div>
+        </div>
     </div>
+    </div>
+
     <a class="btn btn-danger navbar-btn" href="./login.html" onclick="handleLogout()">Logout</a>
 </div>
 
-
+</div>
 <div class="modal fade" id="appointment-edit-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="appointment-edit-modal-title" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
