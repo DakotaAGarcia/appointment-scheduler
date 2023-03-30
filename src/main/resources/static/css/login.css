@@ -13,6 +13,7 @@ body {
     align-items: center;
     height: 100%;
     position: relative;
+    padding-top:50px;
 }
 
 #login-container {
@@ -25,6 +26,10 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.5);
     color: #8e8027;
+}
+.welcome{
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 30px;
 }
 
 h1 {
@@ -51,4 +56,56 @@ h1 {
     background-color: black;
     color: white;
     border: none;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: black;
+    z-index: 99;
+}
+.hamburger-menu {
+    position: absolute;
+    z-index: 100;
+    top: 24px;
+    left: 24px;
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 5vw;
+    height: 2vh;
+}
+
+.hamburger-icon span {
+    background-color: #ffffff;
+    height: 2px;
+    width: 100%;
+
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    z-index: 100;
+    width:15vw;
+}
+
+.show-dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu .btn {
+    margin-bottom: 1rem;
 }

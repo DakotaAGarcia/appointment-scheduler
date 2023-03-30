@@ -1,11 +1,12 @@
 body {
-    background-image: url('../images/user-home-background.jpg');
+    background-image: url('../images/trainer-home-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100vw;
-    color: navajowhite;
+}
+h2{
+    padding-top: 10vh;
 }
 
 .page-wrapper {
@@ -15,7 +16,6 @@ body {
     height: 100vh;
     width: 100vw;
 }
-
 
 .main-container {
     display: flex;
@@ -32,8 +32,10 @@ body {
     padding-right: 0 !important;
 }
 
-#appointment-form-container {
-    width: 400px;
+#trainer-appointments-container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #appointment-container {
@@ -45,18 +47,7 @@ body {
     max-height: max-content;
 }
 
-.navbar-btn {
-    width: 85px;
-    background-color: rgba(5, 30, 89);
-    color: #8e8027;
-    align-self: flex-start;
-}
-#submit-button{
-    width: 85px;
-    background-color: rgba(5, 30, 89);
-    color: #8e8027;
-    align-self: center;
-}
+
 
 .left-align-form .form-group {
     text-align: left;
@@ -74,31 +65,41 @@ body {
     flex-wrap: wrap;
 }
 
-
-
 .appointments-wrapper {
     display: flex;
-    width:80vw;
+    width: 90vw;
     flex-grow: 1;
-    padding-left: 39px;
+    padding-left: 20px;
 }
 .appointment-card {
-    width: 19rem;
-    height: 19rem;
-    padding: 2rem;
+    width: 15rem;
+    height: 15rem;
+    background-color: rgba(5, 30, 89, 0.5);
 }
 
 .appointment-card-body {
     height: available;
 }
 
-.form-group input{
+.form-group input {
     opacity: .5;
 }
 
 .form-control {
     opacity: .5;
 }
-.opaque-background {
-    background-color: rgba(5, 30, 89, 0.5);
+.opaque-background, .appointment-card{
+    background-color: rgba(2, 2, 2, 0.55);
+}
+.appointment-card .card-text,
+.appointment-card p {
+    color: white;
+}
+.navbar-btn{
+    position: absolute;
+    z-index: 100;
+    bottom: 24px;
+    left: 24px;
+    background-color: white;
+    color: black;
 }
