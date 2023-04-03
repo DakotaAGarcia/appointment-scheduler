@@ -1,15 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-//Cookie
+
 const cookieArr = document.cookie.split("=")
 const userId = cookieArr[1];
 
-//DOM Elements
+
 const submitForm = document.getElementById("appointment-form")
 const appointmentContainer = document.getElementById("appointment-container")
 
-//Modal Elements
+
 let appointmentDescription = document.getElementById('edit-appointment-description')
 let updateAppointmentBtn = document.getElementById('update-appointment-button')
+
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    hamburgerIcon.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show-dropdown-menu');
+    });
 
 const headers = {
     'Content-Type': 'application/json'
