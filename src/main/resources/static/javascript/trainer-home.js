@@ -76,18 +76,14 @@ function saveComment() {
     })
         .then(response => {
             if (response.ok) {
-                // Update the comment text in the page
                 const commentElement = document.querySelector(`.appointment-card[data-appointment-id="${appointmentId}"] p span.comment`);
                 if (commentElement) {
                     commentElement.textContent = commentText;
                 }
-
-                // Close the modal
                 const editCommentModalElement = document.getElementById('editCommentModal');
                 const editCommentModal = bootstrap.Modal.getInstance(editCommentModalElement);
                 editCommentModal.hide();
             } else {
-                // Handle any errors returned by the server
                 console.error('Error updating comment:', response.status);
             }
         })
@@ -95,10 +91,6 @@ function saveComment() {
             console.error('Error fetching the update comment API:', error);
         });
 }
-
-// ... (Keep the existing code after the saveComment function)
-
-
 
 const createAppointmentCards = async (array) => {
     appointmentContainer.innerHTML = '';
