@@ -53,4 +53,15 @@ public class TrainerServiceImpl implements TrainerService{
         Optional<Trainer> trainerOptional = trainerRepository.findById(trainerId);
         return trainerOptional.map(TrainerDto::new).orElse(null);
     }
+    @Override
+    @Transactional
+    public void updateTrainerComment(Long trainerId, String comment) {
+        Optional<Trainer> trainerOptional = trainerRepository.findById(trainerId);
+        if (trainerOptional.isPresent()) {
+            Trainer trainer = trainerOptional.get();
+            trainer.setComment(comment);
+            trainerRepository.saveAndFlush(trainer);
+        }
+    }
+
 }

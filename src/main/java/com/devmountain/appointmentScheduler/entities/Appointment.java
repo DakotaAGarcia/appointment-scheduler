@@ -36,6 +36,9 @@ public class Appointment {
     @Column(name="description")
     private String description;
 
+    @Column(name="comment")
+    private String comment;
+
     public Appointment(AppointmentDto appointmentDto){
         if(appointmentDto.getDescription() != null)
             this.description = appointmentDto.getDescription();
@@ -55,6 +58,9 @@ public class Appointment {
         if (appointmentDto.getUserId() != null) {
             this.user = new User();
             this.user.setId(appointmentDto.getUserId());
+        }
+        if(appointmentDto.getComment() != null){
+            this.comment = appointmentDto.getComment();
         }
     }
 

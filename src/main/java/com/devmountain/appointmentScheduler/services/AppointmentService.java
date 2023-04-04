@@ -20,5 +20,8 @@ public interface AppointmentService {
 
     Optional<AppointmentDto> getAppointmentById(Long appointmentId);
 
+    String findCommentByAppointmentId(Long appointmentId);
+
+    boolean updateAppointmentComment(Long appointmentId, String comment);
 
 }

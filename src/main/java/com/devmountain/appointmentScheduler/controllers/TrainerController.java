@@ -46,5 +46,10 @@ public class TrainerController {
             return ResponseEntity.notFound().build();
         }
     }
+    @PutMapping("/comment/{trainerId}")
+    public void updateComment(@RequestBody TrainerDto trainerDto, @PathVariable Long trainerId) {
+        trainerService.updateTrainerComment(trainerId, trainerDto.getComment());
+    }
+
 
 }

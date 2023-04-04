@@ -32,6 +32,9 @@ public class Trainer {
     @Column(name="bio", columnDefinition = "text")
     private String bio;
 
+    @Column(name="comment")
+    private String comment;
+
 
     @OneToMany(mappedBy = "trainer", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JsonBackReference

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -44,6 +45,24 @@ public class AppointmentsController {
     public ResponseEntity<List<AppointmentDto>> getAppointmentsByTrainer(@PathVariable Long trainerId) {
         List<AppointmentDto> appointments = appointmentService.getAppointmentsByTrainer(trainerId);
         return ResponseEntity.ok(appointments);
+    }
+    @GetMapping("/{appointmentId}/comment")
+    public ResponseEntity<String> getAppointmentComment(@PathVariable Long appointmentId) {
+        String comment = appointmentService.findCommentByAppointmentId(appointmentId);
+        if (comment == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(comment);
+    }
+    @PutMapping("/{appointmentId}/comment")
+    public ResponseEntity<Void> updateAppointmentComment(@PathVariable Long appointmentId, @RequestBody Map<String, String> body) {
+        String comment = body.get("comment");
+        boolean updated = appointmentService.updateAppointmentComment(appointmentId, comment);
+        if (updated) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

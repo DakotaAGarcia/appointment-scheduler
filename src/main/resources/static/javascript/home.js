@@ -154,6 +154,7 @@ const createAppointmentCards = (array) => {
             <p>Date: ${obj.date}</p>
             <p>Time: ${obj.time}</p>
             <p>Trainer: ${trainer.username} (${trainer.email})</p>
+            <p>Comment from trainer: ${obj.comment || 'No comment'}</p>
             <div class="d-flex justify-content-between">
                 <button class="btn delete-btn" style="background-color: black; color: white;">Delete</button>
                 <button type="button" class="btn edit-btn" style="background-color: black; color: white;"

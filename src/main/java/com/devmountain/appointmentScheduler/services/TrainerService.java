@@ -15,4 +15,6 @@ public interface TrainerService {
     List<Trainer> getAllTrainers();
 
     TrainerDto getTrainerById(Long trainerId);
+    void updateTrainerComment(Long trainerId, String comment);
+
 }

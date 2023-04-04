@@ -23,6 +23,8 @@ public class AppointmentDto implements Serializable {
     private Long trainerId;
     private String description;
 
+    private String comment;
+
     public AppointmentDto(Appointment appointment){
         if(appointment.getId() != null){
             this.id = appointment.getId();
@@ -40,9 +42,11 @@ public class AppointmentDto implements Serializable {
             this.userId = appointment.getUser().getId();
             this.username = appointment.getUser().getUsername();
         }
-
         if(appointment.getDescription() != null){
             this.description = appointment.getDescription();
+        }
+        if(appointment.getComment() != null){
+            this.comment = appointment.getComment();
         }
     }
 }

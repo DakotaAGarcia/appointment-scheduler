@@ -49,7 +49,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         if (appointmentOptional.isPresent()) {
             Appointment appointment = appointmentOptional.get();
             System.out.println("Before update: " + appointment);
-
+            appointment.setComment(appointmentDto.getComment());
             appointment.setDescription(appointmentDto.getDescription());
             appointment.setDate(appointmentDto.getDate());
             appointment.setTime(appointmentDto.getTime());
@@ -87,5 +87,21 @@ public class AppointmentServiceImpl implements AppointmentService {
         List<Appointment> appointments = appointmentRepository.findByTrainerId(trainerId);
         return appointments.stream().map(AppointmentDto::new).collect(Collectors.toList());
     }
-
+    @Override
+    public String findCommentByAppointmentId(Long appointmentId) {
+        Optional<Appointment> appointmentOptional = appointmentRepository.findById(appointmentId);
+        return appointmentOptional.map(Appointment::getComment).orElse(null);
+    }
+    @Override
+    public boolean updateAppointmentComment(Long appointmentId, String comment) {
+        Optional<Appointment> optionalAppointment = appointmentRepository.findById(appointmentId);
+        if (optionalAppointment.isPresent()) {
+            Appointment appointment = optionalAppointment.get();
+            appointment.setComment(comment);
+            appointmentRepository.save(appointment);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

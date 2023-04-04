@@ -20,6 +20,8 @@ public class TrainerDto implements Serializable {
     private String bio;
     private String password;
     private String email;
+
+    private String comment;
     private Set<AppointmentDto> appointmentDtoSet = new HashSet<>();
 
     public TrainerDto(Trainer trainer){
